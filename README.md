@@ -1,4 +1,4 @@
-# ⭐ Star 星星走起 动动发财手点点 ⭐[最近申请公益领域需要100星，帮我另一个项目点一Star ⭐ ](https://github.com/oyz8/random-pic-api)
+# [⭐最近申请公益领域需要100星，帮我另一个项目点一Star ⭐ ](https://github.com/oyz8/random-pic-api) ###  Star 星星走起 动动发财手点点
 
 > 🚀 基于 Selenium 的 ClawCloud 自动登录保活脚本，专为青龙面板设计，支持 GitHub OAuth 登录、两步验证、Cookie 自动更新。
 
@@ -90,7 +90,6 @@ requests
 | `TG_CHAT_ID` | Telegram Chat ID | ✅ | `123456789` |
 | `QL_CLIENT_ID` | 青龙应用 Client ID | ✅ | `xxx` |
 | `QL_CLIENT_SECRET` | 青龙应用 Client Secret | ✅ | `xxx` |
-| `CLAW_CLOUD_URL` | ClawCloud 地址 | ❌ | `https://eu-central-1.run.claw.cloud` |
 | `TWO_FACTOR_WAIT` | 2FA 等待时间（秒） | ❌ | `120` |
 
 ![环境变量](./img/青龙面板添加环境变量.png)
@@ -148,10 +147,19 @@ clawcloud-ql/
 
 | 区域 | 地址 |
 |------|------|
-| 默认 | `https://run.claw.cloud` |
+| 默认 | `https://console.run.claw.cloud` |
 | 欧洲 | `https://eu-central-1.run.claw.cloud` |
 | 美国 | `https://us-east-1.run.claw.cloud` |
 | 亚洲 | `https://ap-southeast-1.run.claw.cloud` |
+
+### 改进区域自动切换
+
+脚本会自动跟踪 OAuth 回调后的实际区域。例如：
+- 初始访问 `eu-central-1` 区域
+- OAuth 回调可能跳转到 `ap-southeast-1` 区域
+- 脚本会自动使用实际区域进行后续操作
+
+这意味着 `CLAW_CLOUD_URL` 只需要设置初始登录入口，无需担心区域跳转问题。
 
 ### Telegram Bot 配置
 
@@ -285,3 +293,4 @@ chromedriver --version
 **如果这个项目对你有帮助，请给个 ⭐ Star 支持一下！**
 
 ---
+
